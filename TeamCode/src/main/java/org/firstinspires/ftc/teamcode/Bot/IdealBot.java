@@ -15,13 +15,14 @@ public class IdealBot extends Bot
     //hmap
     private HardwareMap hardwareMap;
 
-    //bot hardware
-    public ColorSensor colorSensor;
+    /** BOT HARDWARE **/
+    //motors
     public DcMotor lMotor;
     public DcMotor rMotor;
-    public DcMotor fLMotor;
-    public DcMotor fRMotor;
+
+    //sensors
     public ADAFruitIMU imu;
+    public ColorSensor colorSensor;
     public OpticalDistanceSensor oDS;
 
     //constructor
@@ -37,24 +38,20 @@ public class IdealBot extends Bot
     {
 
         //motors, all set to use encoders
-        fRMotor = hardwareMap.dcMotor.get("fRMotor");
-        fRMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rMotor = hardwareMap.dcMotor.get("rMotor");
         rMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        fLMotor = hardwareMap.dcMotor.get("fLMotor");
-        fLMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lMotor = hardwareMap.dcMotor.get("lMotor");
         lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);;
 
         //sensors
-        imu = new ADAFruitIMU(hardwareMap, "imu");
-        oDS = hardwareMap.opticalDistanceSensor.get("oDS");
-        colorSensor = hardwareMap.colorSensor.get("cSensor");
+
+//        imu = new ADAFruitIMU(hardwareMap, "imu");
+//        colorSensor = hardwareMap.colorSensor.get("colorSensor");
+//        oDS = hardwareMap.opticalDistanceSensor.get("oDS");
+
 
         //adds to list
         bot.leftMotors.add(lMotor);
-        bot.leftMotors.add(fLMotor);
         bot.rightMotors.add(rMotor);
-        bot.rightMotors.add(fRMotor);
     }
 }
