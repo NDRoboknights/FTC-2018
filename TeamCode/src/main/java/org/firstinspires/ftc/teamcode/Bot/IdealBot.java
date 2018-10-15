@@ -41,7 +41,7 @@ public class IdealBot extends Bot
         rMotor = hardwareMap.dcMotor.get("rMotor");
         rMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         lMotor = hardwareMap.dcMotor.get("lMotor");
-        lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);;
+        lMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         //sensors
 

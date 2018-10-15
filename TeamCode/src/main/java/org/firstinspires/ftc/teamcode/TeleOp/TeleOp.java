@@ -6,7 +6,7 @@ import org.firstinspires.ftc.teamcode.Bot.IdealBot;
 public class TeleOp extends customTeleOp
 {
     //bot
-    private IdealBot bot;
+    private IdealBot bot = new IdealBot(hardwareMap);
 
     //resets zeroes
     private long prevTime = 0;
@@ -17,8 +17,6 @@ public class TeleOp extends customTeleOp
     //init
     public void init()
     {
-        //instantiates bot class
-        bot =  new IdealBot(hardwareMap);
         //maps hardware
         bot.init(hardwareMap);
     }
@@ -36,7 +34,6 @@ public class TeleOp extends customTeleOp
 
 
         /**GETS DELTAS**/
-
         //delta time used in speed calculations
         double dTime = (currTime - prevTime) * 10E-9;
 
